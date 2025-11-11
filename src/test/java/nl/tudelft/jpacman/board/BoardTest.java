@@ -32,6 +32,7 @@ class BoardTest {
      * Test case 2: An invalid board containing a null square.
      * This should fail because of the Board invariant assertion.
      */
+
    /* @Test
     void testInvalidBoardSquareAt() {
         // Arrange
