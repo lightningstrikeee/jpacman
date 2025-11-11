@@ -12,19 +12,21 @@ class OccupantTest {
 
     private Unit unit;
 
+    /**
+     * Sets up a new BasicUnit before each test.
+     */
     @BeforeEach
     void setUp() {
         unit = new BasicUnit();
     }
 
     /**
-     * Tests that the occupant is initialized correctly.
+     * Tests that the occupant is initialized correctly (no starting square).
      */
     @Test
     void noStartSquare() {
         assertThat(unit.hasSquare()).isFalse();
     }
-
 
     /**
      * Test that the unit correctly occupies a square.
