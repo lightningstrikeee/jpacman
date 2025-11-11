@@ -18,7 +18,7 @@ class OccupantTest {
     }
 
     /**
-     * A new Unit should not have any square assigned initially.
+     * Tests that the occupant is initialized correctly.
      */
     @Test
     void noStartSquare() {

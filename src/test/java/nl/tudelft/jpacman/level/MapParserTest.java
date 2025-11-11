@@ -48,8 +48,10 @@ public class MapParserTest {
         Mockito.verify(levelFactory, Mockito.times(1)).createGhost();
         Mockito.verify(boardFactory, Mockito.atLeastOnce()).createGround();
         Mockito.verify(boardFactory, Mockito.atLeastOnce()).createWall();
-        Mockito.verify(levelFactory, Mockito.times(1)).createLevel(Mockito.any(), Mockito.anyList(), Mockito.anyList());
-        Mockito.verify(boardFactory, Mockito.times(1)).createBoard(Mockito.any(Square[][].class));
+        Mockito.verify(levelFactory, Mockito.times(1))
+            .createLevel(Mockito.any(), Mockito.anyList(), Mockito.anyList());
+        Mockito.verify(boardFactory, Mockito.times(1))
+            .createBoard(Mockito.any(Square[][].class));
     }
 
     /**
