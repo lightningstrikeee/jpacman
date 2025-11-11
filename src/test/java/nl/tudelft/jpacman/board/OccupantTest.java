@@ -25,9 +25,9 @@ class OccupantTest {
         assertThat(unit.hasSquare()).isFalse();
     }
 
+
     /**
-     * After occupying a square, the unit should be assigned to that square,
-     * and the square should list the unit as an occupant.
+     * Test that the unit correctly occupies a square.
      */
     @Test
     void testOccupy() {
@@ -39,8 +39,7 @@ class OccupantTest {
     }
 
     /**
-     * If the unit moves to a new square, it should no longer occupy the old one.
-     * Only the new square should contain the unit.
+     * Test that the unit correctly reoccupies a new square.
      */
     @Test
     void testReoccupy() {
