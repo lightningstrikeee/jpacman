@@ -6,52 +6,52 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Test suite to confirm that {@link Unit}s correctly (de)occupy squares.
- *
- * @author Jeroen Roosen 
- *
+ * Test suite to confirm that Units correctly (de)occupy squares.
  */
 class OccupantTest {
 
-    /**
-     * The unit under test.
-     */
     private Unit unit;
 
-    /**
-     * Resets the unit under test.
-     */
     @BeforeEach
     void setUp() {
         unit = new BasicUnit();
     }
 
     /**
-     * Asserts that a unit has no square to start with.
+     * A new Unit should not have any square assigned initially.
      */
     @Test
     void noStartSquare() {
-        // Remove the following placeholder:
-        assertThat(unit).isNotNull();
+        assertThat(unit.hasSquare()).isFalse();
     }
 
     /**
-     * Tests that the unit indeed has the target square as its base after
-     * occupation.
+     * After occupying a square, the unit should be assigned to that square,
+     * and the square should list the unit as an occupant.
      */
     @Test
     void testOccupy() {
-        // Remove the following placeholder:
-        assertThat(unit).isNotNull();
+        Square target = new BasicSquare();
+        unit.occupy(target);
+
+        assertThat(unit.getSquare()).isEqualTo(target);
+        assertThat(target.getOccupants()).contains(unit);
     }
 
     /**
-     * Test that the unit indeed has the target square as its base after
-     * double occupation.
+     * If the unit moves to a new square, it should no longer occupy the old one.
+     * Only the new square should contain the unit.
      */
     @Test
     void testReoccupy() {
-        // Remove the following placeholder:
-        assertThat(unit).isNotNull();
+        Square first = new BasicSquare();
+        Square second = new BasicSquare();
+
+        unit.occupy(first);
+        unit.occupy(second);
+
+        assertThat(unit.getSquare()).isEqualTo(second);
+        assertThat(first.getOccupants()).doesNotContain(unit);
+        assertThat(second.getOccupants()).contains(unit);
     }
 }
